@@ -3,7 +3,7 @@
 #
 # by Vincenc Podobnik
 #
-#
+# A hidden "gray100" watermark is added to the plot using steganography.
 
 library(dplyr)
 
@@ -84,7 +84,7 @@ data <- filter( data, Date >= "2007-02-01" & Date <= "2007-02-02" )
 
 png("plot3.png",  width = 480, height = 480, units = "px")
 
-par( col.sub = "gray" )
+par( col.sub = "gray100" )
 with( data,
       plot( Sub_metering_1 ~ as.POSIXct( paste( Date, Time, sep = " " ) ),
             type = "l",

@@ -1,11 +1,20 @@
+################################################################################
 # plot1.R
 #
+#                 Data Science Specialization via Coursera
 #
-# by Vincenc Podobnik
+#                       Exploratory Data Analysis
+#                           Course project 1
 #
+#                       Author: Vincenc Podobnik
 #
+################################################################################
+
+# A hidden "gray100" watermark is added to the plot using steganography.
 
 library(dplyr)
+
+# setwd( "G:\\cygwin\\home\\vincenck\\edu\\coursera\\datascience\\proj\\ExData_Plotting1" )
 
 
 # Clear environment
@@ -85,7 +94,7 @@ png( "plot1.png",  width = 480, height = 480, units = "px")
 
 # Plot histogram 1
 
-par( col.sub = "gray" )
+par( col.sub = "gray100" )
 with( data,
       hist( Global_active_power,
             col="red",
