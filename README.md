@@ -35,11 +35,11 @@ web site</a>:
 
 ## Processing
 
-Each od the scripts contains the same code for reading the data. As the project instructs for only two days of data to be assesed (2007-02-01 and 2007-02-02) the data file is initially read using readlines to determine the line range of the desired dates.
+Each script contains the same code for reading the data. As the project calls for use of only two days (2007-02-01 and 2007-02-02), the data file is initially read using `readlines()` to determine the range of the desired dates.
 
-To speed up the actual loading, the datafile is sampled for column clasees using 10 rows, before the set is loaded using the range measured above. This significantly reduces load time. Na string is set to equal `?` as per instructions below.
+To speed up the actual loading, the datafile is sampled for column clasees using 10 rows, before the set is loaded using the predetermined range. This significantly reduces the load time. n/a string is set to `?` as per instructions below.
 
-The `Date` column is stransformed using `as.Date()` and `strptime()`
+The `Date` column is transformed using `as.Date()` and `strptime()`
 
 The loaded dataset is additionaly filtered using dplyr `filter()` as to be absolutely sure only the relevant data is being used.
 
