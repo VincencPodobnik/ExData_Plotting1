@@ -1,5 +1,58 @@
 ## Introduction
 
+This repo is the peer-assesed submission for the Exploratory Data Analysis, Course Project 1
+
+## Contents
+
+The project consists of four(4) R script files and four(4) resulting .PNG files.
+
+## Environment information
+
+Development was performed using RStudio 0.99.486, R version 3.2.2. "Fire Safety" on Windows 8.1
+
+Payload containing the raw data was obtained on **2015-11-03 21:00 CET** from:   
+https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
+
+## Variables
+
+The following descriptions of the 9 variables in the dataset are taken
+from
+the <a href="https://archive.ics.uci.edu/ml/datasets/Individual+household+electric+power+consumption">UCI
+web site</a>:
+
+<ol>
+<li><b>Date</b>: Date in format dd/mm/yyyy </li>
+<li><b>Time</b>: time in format hh:mm:ss </li>
+<li><b>Global_active_power</b>: household global minute-averaged active power (in kilowatt) </li>
+<li><b>Global_reactive_power</b>: household global minute-averaged reactive power (in kilowatt) </li>
+<li><b>Voltage</b>: minute-averaged voltage (in volt) </li>
+<li><b>Global_intensity</b>: household global minute-averaged current intensity (in ampere) </li>
+<li><b>Sub_metering_1</b>: energy sub-metering No. 1 (in watt-hour of active energy). It corresponds to the kitchen, containing mainly a dishwasher, an oven and a microwave (hot plates are not electric but gas powered). </li>
+<li><b>Sub_metering_2</b>: energy sub-metering No. 2 (in watt-hour of active energy). It corresponds to the laundry room, containing a washing-machine, a tumble-drier, a refrigerator and a light. </li>
+<li><b>Sub_metering_3</b>: energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.</li>
+</ol>
+
+
+## Processing
+
+Each od the scripts contains the same code for reading the data. As the project instructs for only two days of data to be assesed (2007-02-01 and 2007-02-02) the data file is initially read using readlines to determine the line range of the desired dates.
+
+To speed up the actual loading, the datafile is sampled for column clasees using 10 rows, before the set is loaded using the range measured above. This significantly reduces load time. Na string is set to equal `?` as per instructions below.
+
+The `Date` column is stransformed using `as.Date()` and `strptime()`
+
+The loaded dataset is additionaly filtered using dplyr `filter()` as to be absolutely sure only the relevant data is being used.
+
+Various plots are than created using the `png()` function with width and height set to 480px.
+
+A hidden watermark has been added to the plots using `sub = ` with colour `gray100`
+
+
+---
+The original (forked) readme.MD follows:
+
+## Introduction
+
 This assignment uses data from
 the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine
 Learning Repository</a>, a popular repository for machine learning
